@@ -34,7 +34,7 @@
       </div>
       <ul>
         <li><a href="#" (click)="scrollTo(products)">Пироженки</a></li>
-        <li><a href="#" (click)="scrollTo(about)">О нас</a></li>
+        <li><a href="#">О нас</a></li>
         <li><a href="#" (click)="scrollTo(form)">Оформить заказ</a></li>
       </ul>
     </nav>
@@ -63,37 +63,7 @@
   </div>
 </section>
 
-<section class="advantages" #about>
-  <div class="container">
-    <div class="advantages-main">
-      <div class="advantages-main-title">
-        Мы печём для вас вкуснейшие макаруны уже более 10 лет
-      </div>
-      <div class="advantages-main-info">
-        Все пироженки мы готовим только из натуральных и качественных продуктов, без консервантов,
-        ароматизаторов,
-        красителей. Используем в приготовлении сливочное масло 82,5%, без дрожжей, маргарина, разрыхлителей и
-        улучшителей муки.
-      </div>
-      <div class="advantages-main-image">
-        <img src="../assets/images/big-macaroon.png" alt="">
-      </div>
-    </div>
-    <div class="advantages-items">
-      <div class="advantage-item" *ngFor="let advantage of advantages let i = index">
-        <div class="advantage-item-number">
-          <span>{{i + 1}}</span>
-        </div>
-        <div class="advantage-item-title">
-          {{advantage.title}}
-        </div>
-        <div class="advantage-item-info">
-          {{advantage.description}}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<advantages #about></advantages>
 
 <section class="products" #products>
   <div class="container">
@@ -111,7 +81,7 @@
             {{macaroon.quantity}} шт.
           </div>
           <div class="products-item-info-cost">
-            {{formatPrice(macaroon.price)}} руб.
+            {{macaroon.price | formatPrice}} руб.
           </div>
           <div class="products-item-info-action">
             <button class="btn product-item-info-action-btn" (click)="orderProduct(macaroon, form)">Заказать</button>
@@ -200,16 +170,7 @@
   </div>
 </footer>
 
-<div class="gift" *ngIf="showPresent">
-  <div class="gift-circle">
-    <img src="../assets/images/gift.png" alt="gift">
-    <div class="bubble">
-      <div class="bubble-text">
-        <span class="bubble-text-span">Оформите заказ</span> и получите подарок!
-      </div>
-    </div>
-  </div>
-</div>
+<cart *ngIf="showCart"></cart>
 
 <div class="loader">
   <div class="lds-ripple">

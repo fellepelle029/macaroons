@@ -4,10 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
+import { CartComponent } from './components/cart/cart.component';
+import { FormatPricePipe } from './pipes/format-price.pipe';
+import { AdvantagesComponent } from './components/advantages/advantages.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CartComponent,
+    FormatPricePipe,
+    AdvantagesComponent
   ],
   imports: [
     BrowserModule,
