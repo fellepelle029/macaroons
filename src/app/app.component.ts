@@ -1,13 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AdvantagesType} from "./types/advantages.type";
 import {MacaroonsType} from "./types/macaroons.type";
+import {MacaroonService} from "./services/macaroon.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  public macaroons: MacaroonsType[] = [];
   public selectedProduct: MacaroonsType | null = null;
   public phoneNumber: string = '+375 (29) 368-98-68';
   public instagramLink: string = 'https://www.instagram.com/';
@@ -31,34 +33,15 @@ export class AppComponent {
     },
   ];
 
-  public macaroons: MacaroonsType[] = [
-    {
-      image: '1.png',
-      name: 'Макарун с малиной',
-      quantity: 1,
-      price: 1.70,
-    },
-    {
-      image: '2.png',
-      name: 'Макарун с манго',
-      quantity: 1,
-      price: 1.70,
-    },
-    {
-      image: '3.png',
-      name: 'Пирог с ванилью',
-      quantity: 1,
-      price: 1.70,
-    },
-    {
-      image: '4.png',
-      name: 'Пирог с фисташками',
-      quantity: 1,
-      price: 1.70,
-    },
-  ];
-
   public showPresent: boolean = true;
+
+
+  constructor(private macaroonService: MacaroonService) {
+  }
+
+  ngOnInit(){
+    this.macaroons = this.macaroonService.getMacaroons();
+  }
 
   public formatPrice(price: number): string {
     return price.toFixed(2).replace('.', ',');
