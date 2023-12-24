@@ -9,6 +9,7 @@ import {MacaroonService} from "./services/macaroon.service";
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
+  public title = '';
   public macaroons: MacaroonsType[] = [];
   public selectedProduct: MacaroonsType | null = null;
   public phoneNumber: string = '+375 (29) 368-98-68';
