@@ -34,7 +34,7 @@
       </div>
       <ul>
         <li><a href="#" (click)="scrollTo(products)">Пироженки</a></li>
-        <li><a href="#">О нас</a></li>
+        <li><a href="#" (click)="scrollTo(about)">О нас</a></li>
         <li><a href="#" (click)="scrollTo(form)">Оформить заказ</a></li>
       </ul>
     </nav>
@@ -63,7 +63,9 @@
   </div>
 </section>
 
-<advantages #about></advantages>
+<div #about>
+  <advantages></advantages>
+</div>
 
 <section class="products" #products>
   <div class="container">

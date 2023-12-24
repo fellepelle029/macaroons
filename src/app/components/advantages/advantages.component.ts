@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AdvantagesType} from "../../types/advantages.type";
 
 @Component({
@@ -7,9 +7,7 @@ import {AdvantagesType} from "../../types/advantages.type";
   styleUrls: ['./advantages.component.less']
 })
 
-
-export class AdvantagesComponent implements OnInit {
-
+export class AdvantagesComponent {
 
   public advantages: AdvantagesType[] = [
     {
@@ -29,9 +27,4 @@ export class AdvantagesComponent implements OnInit {
       description: 'Вкус, качество и безопасность наших пирогов подтверждена декларацией о соответствии, которую мы получили 22.06.2016 г.',
     },
   ];
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
