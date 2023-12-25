@@ -8,6 +8,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { FormatPricePipe } from './pipes/format-price.pipe';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { MacaroonComponent } from './components/macaroon/macaroon.component';
+import { ButtonBgDirective } from './directives/button-bg.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MacaroonComponent } from './components/macaroon/macaroon.component';
     CartComponent,
     FormatPricePipe,
     AdvantagesComponent,
-    MacaroonComponent
+    MacaroonComponent,
+    ButtonBgDirective
   ],
   imports: [
     BrowserModule,
