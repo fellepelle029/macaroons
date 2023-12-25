@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   public selectedProduct: MacaroonsType | null = null;
   public phoneNumber: string = '+375 (29) 368-98-68';
   public instagramLink: string = 'https://www.instagram.com/';
+  public phoneNumberInput: string = '375293689868';
 
   public showCart: boolean = true;
 

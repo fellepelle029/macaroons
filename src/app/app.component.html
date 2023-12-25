@@ -71,7 +71,8 @@
   <div class="container">
     <h2 class="products-title">Выберите свой макарун</h2>
     <div class="products-items">
-      <macaroon *ngFor="let macaroon of macaroons" [macaroon]="macaroon" (addMacaroonToCartEvent) = 'orderProduct(this.macaroon, form)'></macaroon>
+      <macaroon *ngFor="let macaroon of macaroons" [macaroon]="macaroon"
+                (addMacaroonToCartEvent)='orderProduct(this.macaroon, form)'></macaroon>
     </div>
   </div>
 </section>
@@ -109,7 +110,10 @@
             <div class="order-input">
               <input type="text" name="phone" id="inputPhone"
                      class="order-form-input"
-                     placeholder="+375 (__) ___ - __ - __">
+                     placeholder="+375 (__) ___ - __ - __"
+                     [ngModel]="phoneNumberInput | phoneNumberFormatPipe"
+                     (ngModelChange)="phoneNumberInput=$event"
+              >
               <div class="error-input" id="phoneError">Введите номер телефона</div>
             </div>
           </div>

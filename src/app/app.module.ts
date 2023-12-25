@@ -10,6 +10,7 @@ import { AdvantagesComponent } from './components/advantages/advantages.componen
 import { MacaroonComponent } from './components/macaroon/macaroon.component';
 import { ButtonBgDirective } from './directives/button-bg.directive';
 import { ReductionPipePipe } from './pipes/reduction.pipe.pipe';
+import { PhoneNumberFormatPipePipe } from './pipes/phone-number-format.pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReductionPipePipe } from './pipes/reduction.pipe.pipe';
     AdvantagesComponent,
     MacaroonComponent,
     ButtonBgDirective,
-    ReductionPipePipe
+    ReductionPipePipe,
+    PhoneNumberFormatPipePipe
   ],
   imports: [
     BrowserModule,
