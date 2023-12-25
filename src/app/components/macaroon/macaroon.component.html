@@ -1,0 +1,21 @@
+<div class="products-item" >
+  <div class="products-item-image">
+    <img src="../assets/images/{{macaroon.image}}">
+  </div>
+  <div class="products-item-name">
+    {{macaroon.name}}
+  </div>
+  <div class="products-item-info">
+    <div class="products-item-info-quantity">
+      {{macaroon.quantity}} шт.
+    </div>
+    <div class="products-item-info-cost">
+      {{macaroon.price | formatPrice}} руб.
+    </div>
+    <div class="products-item-info-action">
+      <button class="btn product-item-info-action-btn" (click)="addMacaroonToCart()" >Заказать</button>
+    </div>
+  </div>
+</div>
+
+<!--(click)="orderProduct(macaroon, form)-->

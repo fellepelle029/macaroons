@@ -7,13 +7,15 @@ import {FormsModule} from "@angular/forms";
 import { CartComponent } from './components/cart/cart.component';
 import { FormatPricePipe } from './pipes/format-price.pipe';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
+import { MacaroonComponent } from './components/macaroon/macaroon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CartComponent,
     FormatPricePipe,
-    AdvantagesComponent
+    AdvantagesComponent,
+    MacaroonComponent
   ],
   imports: [
     BrowserModule,

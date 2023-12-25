@@ -71,26 +71,7 @@
   <div class="container">
     <h2 class="products-title">Выберите свой макарун</h2>
     <div class="products-items">
-      <div class="products-item" *ngFor="let macaroon of macaroons let i = index">
-        <div class="products-item-image">
-          <img src="../assets/images/{{macaroon.image}}" alt="{{i+1}}">
-        </div>
-        <div class="products-item-name">
-          {{macaroon.name}}
-        </div>
-        <div class="products-item-info">
-          <div class="products-item-info-quantity">
-            {{macaroon.quantity}} шт.
-          </div>
-          <div class="products-item-info-cost">
-            {{macaroon.price | formatPrice}} руб.
-          </div>
-          <div class="products-item-info-action">
-            <button class="btn product-item-info-action-btn" (click)="orderProduct(macaroon, form)">Заказать</button>
-          </div>
-        </div>
-      </div>
-
+      <macaroon *ngFor="let macaroon of macaroons" [macaroon]="macaroon" (addMacaroonToCartEvent) = 'orderProduct(this.macaroon, form)'></macaroon>
     </div>
   </div>
 </section>
