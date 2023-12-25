@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     this.macaroons = this.macaroonService.getMacaroons();
-    this.showCart = this.cartService.quantity !== 0;
+    this.showCart = this.cartService.macaroonsQuantity !== 0;
   }
 
   public orderProduct(product: MacaroonsType, target: HTMLElement | null): void {
@@ -43,8 +43,8 @@ export class AppComponent implements OnInit {
 
   private addMacaroonToCart(product: MacaroonsType): void {
     this.showCart = true;
-    this.cartService.quantity++
-    this.cartService.price = this.cartService.price + product.price
+    this.cartService.macaroonsQuantity++
+    this.cartService.commonPrice = this.cartService.commonPrice + product.price
   }
 
   private inputMacaroonNameToForm(product: MacaroonsType): void{
