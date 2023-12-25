@@ -9,6 +9,7 @@ import { FormatPricePipe } from './pipes/format-price.pipe';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { MacaroonComponent } from './components/macaroon/macaroon.component';
 import { ButtonBgDirective } from './directives/button-bg.directive';
+import { ReductionPipePipe } from './pipes/reduction.pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ButtonBgDirective } from './directives/button-bg.directive';
     FormatPricePipe,
     AdvantagesComponent,
     MacaroonComponent,
-    ButtonBgDirective
+    ButtonBgDirective,
+    ReductionPipePipe
   ],
   imports: [
     BrowserModule,
