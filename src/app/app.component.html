@@ -39,7 +39,7 @@
       </ul>
     </nav>
     <div class="phone-number phone-number-header">
-      <a href="#">{{phoneNumber}}</a>
+      <a href="#">{{phoneNumber | phoneNumberFormatPipe}}</a>
     </div>
   </div>
 </header>
@@ -111,8 +111,7 @@
               <input type="text" name="phone" id="inputPhone"
                      class="order-form-input"
                      placeholder="+375 (__) ___ - __ - __"
-                     [ngModel]="phoneNumberInput | phoneNumberFormatPipe"
-                     (ngModelChange)="phoneNumberInput=$event"
+                     [ngModel]="phoneNumber | phoneNumberFormatPipe"
               >
               <div class="error-input" id="phoneError">Введите номер телефона</div>
             </div>
@@ -152,7 +151,7 @@
     </a>
     </div>
     <div class="phone-footer">
-      <a href="#">{{phoneNumber}}</a>
+      <a href="#">{{phoneNumber | phoneNumberFormatPipe}}</a>
     </div>
   </div>
 </footer>
