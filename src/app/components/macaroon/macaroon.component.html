@@ -10,7 +10,7 @@
       {{macaroon.quantity}} шт.
     </div>
     <div class="products-item-info-cost">
-      {{ macaroon.price | currency: 'руб.'}}
+      {{ macaroon.price | currency: 'руб.' | formatPrice}}
     </div>
     <div class="products-item-info-action">
       <button class="btn product-item-info-action-btn" (click)="addMacaroonToCart()" ButtonBg >Заказать</button>
