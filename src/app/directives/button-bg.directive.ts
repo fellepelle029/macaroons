@@ -13,25 +13,21 @@ export class ButtonBgDirective implements OnInit{
 
   @HostListener('mouseenter')
   onMouseEnter() {
-    this.changeButtonBackground('none', 'rgb(119, 11, 29)');
+    this.changeButtonBackground('none');
   }
 
   @HostListener('mouseleave')
   onMouseLeave() {
-    this.changeButtonBackground(this.defaultGradient, 'none');
+    this.changeButtonBackground(this.defaultGradient);
   }
-
-  // Вот в хостлистнере сверху и в ините снизу я пробовал задать color 'none', но в коде все равно сохраняется стиль bg-color для кнопки.
-  // Спасало только то что bg-image имеет, так назовем это, выше приоритет (заливка просто под картинкой).
-  // С color: transparent получается изначальный вариант с белым миганием кнопки.
 
   ngOnInit() {
-    this.changeButtonBackground(this.defaultGradient, 'none')
+    this.changeButtonBackground(this.defaultGradient)
+    this.rend.setStyle(this.button.nativeElement, 'background-color', 'rgb(119, 11, 29)');
+
   }
 
-  changeButtonBackground(defaultGradient: string, color?:string):void {
+  changeButtonBackground(defaultGradient: string):void {
     this.rend.setStyle(this.button.nativeElement, 'background-image', defaultGradient);
-    if (color)
-      this.rend.setStyle(this.button.nativeElement, 'background-color', color);
   }
 }
